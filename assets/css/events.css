@@ -1,0 +1,280 @@
+:root{
+    --primary:#6100a4;
+    --primary-light:#7b2cbf;
+    --secondary:#e50062;
+
+    --bg:#f8f9fa;
+
+    --surface:#ffffff;
+    --surface-low:#f3f4f5;
+    --surface-container:#edeeef;
+
+    --text:#191c1d;
+    --muted:#4c4353;
+
+    --outline:#cfc2d5;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+.events-container{
+    max-width:1200px;
+    margin:auto;
+    padding:120px 24px 80px;
+}
+
+.page-header{
+    margin-bottom:80px;
+}
+
+.page-header h1{
+    font-size:48px;
+    line-height:1.1;
+    font-weight:800;
+    margin-bottom:16px;
+}
+
+.page-header p{
+    max-width:700px;
+    font-size:18px;
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.toolbar{
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    margin-bottom:48px;
+    flex-wrap:wrap;
+}
+
+.search-box{
+    position:relative;
+    width:380px;
+}
+
+.search-box span{
+    position:absolute;
+    left:16px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#777;
+}
+
+.search-box input{
+    width:100%;
+    padding:14px 16px 14px 50px;
+    border:none;
+    border-radius:12px;
+    background:var(--surface-container);
+    font-size:15px;
+}
+
+.genre-filter{
+    display:flex;
+    gap:12px;
+    overflow:auto;
+}
+
+.genre-filter button{
+    border:none;
+    cursor:pointer;
+    padding:10px 20px;
+    border-radius:999px;
+    background:var(--surface-container);
+    color:var(--muted);
+    font-weight:600;
+}
+
+.genre-filter button.active{
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+    color:#fff;
+}
+
+.event-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fill,minmax(280px,1fr));
+    gap:24px;
+}
+
+.event-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.event-card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+    0 16px 32px -8px
+    rgba(97,0,164,.08);
+}
+
+.event-image{
+    position:relative;
+    aspect-ratio:16/9;
+    overflow:hidden;
+}
+
+.event-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.event-card:hover img{
+    transform:scale(1.1);
+}
+
+.status{
+    position:absolute;
+    top:16px;
+    right:16px;
+    padding:6px 12px;
+    border-radius:999px;
+    background:var(--primary-light);
+    color:white;
+    font-size:12px;
+    font-weight:700;
+}
+
+.event-content{
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.event-content h3{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.meta{
+    margin-bottom:20px;
+}
+
+.meta div{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:var(--muted);
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.card-footer{
+    margin-top:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+}
+
+.card-footer small{
+    color:var(--muted);
+    text-transform:uppercase;
+    font-size:11px;
+    font-weight:700;
+}
+
+.card-footer h4{
+    color:var(--secondary);
+    font-size:24px;
+    font-weight:700;
+}
+
+.btn-detail{
+    text-decoration:none;
+    border:2px solid var(--primary);
+    color:var(--primary);
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-detail:hover{
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+    color:white;
+}
+
+.pagination{
+    margin-top:80px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+}
+
+.pagination button{
+    width:42px;
+    height:42px;
+    border:1px solid var(--outline);
+    border-radius:8px;
+    background:#fff;
+    cursor:pointer;
+}
+
+.pagination button.active{
+    background:var(--primary);
+    color:#fff;
+}
+
+.empty-state{
+    width:100%;
+    text-align:center;
+    padding:100px 20px;
+    background:white;
+    border-radius:12px;
+}
+
+.empty-state span{
+    font-size:60px;
+    color:var(--primary);
+}
+
+.empty-state h3{
+    margin-top:15px;
+    margin-bottom:10px;
+}
+
+.empty-state p{
+    color:var(--muted);
+}
+
+@media(max-width:768px){
+
+    .page-header h1{
+        font-size:32px;
+    }
+
+    .search-box{
+        width:100%;
+    }
+
+}
