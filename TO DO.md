@@ -7,17 +7,17 @@
 
 ## Tugas
 - [ ] Mendesain ERD
-- [ ] Membuat database MySQL
-- [ ] Membuat koneksi database PHP
+- [x] Membuat database MySQL
+- [x] Membuat koneksi database PHP
 - [ ] Membuat query CRUD dasar
 
 ## Database
-- [ ] Tabel admin
-- [ ] Tabel events
-- [ ] Tabel orders
-- [ ] Tabel order_items
-- [ ] Tabel ticket_owners
-- [ ] Tabel tickets
+- [x] Tabel admin
+- [x] Tabel events
+- [x] Tabel orders
+- [x] Tabel order_items
+- [x] Tabel ticket_owners
+- [x] Tabel tickets
 
 ## Dokumen
 - [ ] ERD
