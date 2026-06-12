@@ -34,10 +34,10 @@
 # ANGGOTA 2 – FRONTEND WEBSITE USER
 
 ## Home
-- [ ] Navbar
+- [x] Navbar
 - [ ] Hero Slider
 - [ ] Event List
-- [ ] Footer
+- [x] Footer
 
 ## Event
 - [ ] List seluruh event
