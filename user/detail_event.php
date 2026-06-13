@@ -180,7 +180,9 @@ $admin_fee = 5000;
                 <span id="total"></span>
             </div>
 
-            <button class="buy-btn">
+            <button
+                class="buy-btn"
+                onclick="window.location.href='checkout.php?id=<?php echo $event['id']; ?>'">
                 Beli Tiket Sekarang
             </button>
         </div>
