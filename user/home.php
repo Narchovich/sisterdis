@@ -127,6 +127,7 @@ LIMIT 5
                 <div class="price">
                     Rp 450.000
                 </div>
+                
                 <a href="detail_event.php"class="btn-white">
                     Cek Detail
                 </a>
