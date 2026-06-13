@@ -1,10 +1,36 @@
 <?php
 include '../config/database.php';
 
-$events = mysqli_query($conn,"
-SELECT *
-FROM events
-ORDER BY event_date ASC
+$limit = 6;
+
+/* 1. ambil page dulu */
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+if ($page < 1) {
+    $page = 1;
+}
+
+/* 2. hitung total data dulu */
+$totalQuery = mysqli_query($conn, "SELECT COUNT(*) AS total FROM events");
+$totalData = mysqli_fetch_assoc($totalQuery);
+$totalEvents = $totalData['total'];
+
+$totalPages = ($totalEvents > 0) ? ceil($totalEvents / $limit) : 1;
+
+/* 3. validasi page setelah totalPages ada */
+if ($page > $totalPages) {
+    $page = 1;
+}
+
+/* 4. baru hitung offset */
+$offset = ($page - 1) * $limit;
+
+/* 5. query data */
+$events = mysqli_query($conn, "
+    SELECT *
+    FROM events
+    ORDER BY event_date ASC
+    LIMIT $limit OFFSET $offset
 ");
 ?>
 
@@ -151,7 +177,7 @@ ORDER BY event_date ASC
                     event_busy
                 </span>
 
-                <h3>Belum Ada Event</h3>
+                <h3>Tidak Ada Event Yang Tersedia</h3>
 
                 <p>
                     Event yang ditambahkan admin akan muncul di sini.
@@ -163,28 +189,40 @@ ORDER BY event_date ASC
 
     </section>
 
+<?php if($totalPages > 1): ?>
+
     <div class="pagination">
 
-        <button>
-            <span class="material-symbols-outlined">
-                chevron_left
-            </span>
-        </button>
+        <?php if($page > 1): ?>
+            <a href="?page=<?php echo $page - 1; ?>">
+                <span class="material-symbols-outlined">
+                    chevron_left
+                </span>
+            </a>
+        <?php endif; ?>
 
-        <button class="active">
-            1
-        </button>
+        <?php for($i = 1; $i <= $totalPages; $i++): ?>
 
-        <button>2</button>
-        <button>3</button>
+            <a
+                    href="?page=<?php echo $i; ?>"
+            class="<?php echo ($i == $page) ? 'active' : ''; ?>"
+            >
+                <?php echo $i; ?>
+            </a>
 
-        <button>
-            <span class="material-symbols-outlined">
-                chevron_right
-            </span>
-        </button>
+        <?php endfor; ?>
+
+        <?php if($page < $totalPages): ?>
+            <a href="?page=<?php echo $page + 1; ?>">
+                <span class="material-symbols-outlined">
+                    chevron_right
+                </span>
+            </a>
+        <?php endif; ?>
 
     </div>
+
+<?php endif; ?>
 
 </main>
 

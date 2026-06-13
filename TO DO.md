@@ -73,7 +73,7 @@
 # ANGGOTA 3 – MODUL EVENT MANAGEMENT (ADMIN)
 
 ## Login Admin
-- [ ] Login
+- [x] Login
 - [ ] Session
 - [ ] Logout
 
@@ -86,10 +86,10 @@
 - [ ] Upload Denah
 
 ## Dashboard
-- [ ] Total Event
-- [ ] Total Pesanan
-- [ ] Total Tiket
-- [ ] Total Pendapatan
+- [x] Total Event
+- [x] Total Pesanan
+- [x] Total Tiket
+- [x] Total Pendapatan
 
 ## Deliverables
 - [ ] CRUD Event
