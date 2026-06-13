@@ -1,3 +1,6 @@
+<?php
+$adminName = $adminName ?? 'Admin';
+?>
 <header class="topbar">
 
     <div class="search-box">

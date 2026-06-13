@@ -23,8 +23,8 @@
 
             </a>
 
-            <a href="events.php"
-                class="menu-item <?= basename($_SERVER['PHP_SELF']) == 'events.php' ? 'active' : '' ?>">
+            <a href="manajemen_event.php"
+                class="menu-item <?= basename($_SERVER['PHP_SELF']) == 'manajemen_event.php' ? 'active' : '' ?>">
 
                 <i class="fas fa-calendar-alt"></i>
 
