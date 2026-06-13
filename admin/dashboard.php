@@ -129,95 +129,13 @@ $latestOrder = mysqli_query(
 
     <div class="dashboard-container">
 
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-
-            <div class="sidebar-header">
-                <h1>TiketKonser</h1>
-                <p>ADMIN DASHBOARD</p>
-            </div>
-
-            <nav class="sidebar-menu">
-
-                <a href="dashboard.php" class="menu-item active">
-                    <i class="fas fa-chart-line"></i>
-                    Dashboard
-                </a>
-
-                <a href="events.php" class="menu-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    Manajemen Event
-                </a>
-
-                <a href="orders.php" class="menu-item">
-                    <i class="fas fa-receipt"></i>
-                    Manajemen Pesanan
-                </a>
-
-                <a href="tickets.php" class="menu-item">
-                    <i class="fas fa-ticket-alt"></i>
-                    Distribusi Tiket
-                </a>
-
-            </nav>
-
-            <div class="sidebar-footer">
-
-                <div class="admin-avatar">
-                    <?= strtoupper(substr($adminName, 0, 1)); ?>
-                </div>
-
-                <div class="admin-info">
-                    <h4><?= htmlspecialchars($adminName); ?></h4>
-                    <p>Super Admin</p>
-                </div>
-
-            </div>
-
-        </aside>
+        <?php include '../includes/admin-sidebar.php'; ?>
 
         <!-- MAIN CONTENT -->
         <main class="main-content">
 
             <!-- TOPBAR -->
-            <header class="topbar">
-
-                <div class="search-box">
-
-                    <i class="fas fa-search"></i>
-
-                    <input
-                        type="text"
-                        placeholder="Cari event, pesanan, atau tiket...">
-
-                </div>
-
-                <div class="topbar-right">
-
-                    <button class="notification-btn">
-                        <i class="fas fa-bell"></i>
-
-                        <span class="notif-dot"></span>
-                    </button>
-
-                    <div class="profile-box">
-
-                        <div>
-                            <span class="profile-label">
-                                Admin Profile
-                            </span>
-                        </div>
-
-                        <div class="profile-avatar">
-                            <?= strtoupper(substr($adminName, 0, 1)); ?>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </header>
-
+            <?php include '../includes/admin-topbar.php'; ?>
             <!-- CONTENT -->
             <section class="content">
 
