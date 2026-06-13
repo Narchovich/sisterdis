@@ -106,6 +106,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
             Cara Beli
         </a>
 
+        <a href="konfirmasi.php"
+        class="<?= ($current_page == 'confirm.php') ? 'active' : ''; ?>">
+            konfirmasi
+        </a>
+
         <a href="contact.php"
         class="<?= ($current_page == 'contact.php') ? 'active' : ''; ?>">
             Kontak
