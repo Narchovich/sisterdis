@@ -1,6 +1,9 @@
 /* =========================
    PAGE HEADER
 ========================= */
+.content{
+    padding:35px;
+}
 
 .page-header{
     display: flex;

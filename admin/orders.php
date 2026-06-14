@@ -85,7 +85,8 @@ $orders = mysqli_query($conn, "
 
             <?php include '../includes/admin-topbar.php'; ?>
 
-            <div class="page-header">
+            <div class="content">
+                <div class="page-header">
 
                 <div>
 
@@ -485,7 +486,10 @@ $orders = mysqli_query($conn, "
                 </div>
 
             </div>
+
             <script src="../assets/js/orders.js"></script>
+            </div>
+
 
 </body>
 
